@@ -14,12 +14,12 @@ import Cursos from './pages/Cursos';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
 import Signup from './pages/Signup';
-import Buscar from './pages/Buscar';
+import SubeMedia from './components/SubeMedia';
+import Formulario from './pages/Formulario';
 
 const App = () => {
 	const [tieneAcceso, setTieneAcceso] = useState(false);
 	const [datos, setDatos] = useState({});
-	const [datosLogout, setDatosLogout] = useState({});
 	const [token, setToken] = useState();
 
 	// Traemos desde el componente Auth los datos del usuario enviados desde el servidor mediane esta función prop
@@ -73,7 +73,7 @@ const App = () => {
 				<Routes>
 					<Route path='/' element={<Inicio />} />
 					<Route path='/cursos' element={<Cursos />} />
-					<Route path='/docentes' element={<Docentes />} />
+					<Route path='/docentes' element={<Formulario />} />
 					<Route
 						path='/login'
 						element={<Login gestionarLogin={gestionarLogin} />}
@@ -88,6 +88,7 @@ const App = () => {
 					<Route path='*' element={<Navigate to='/404' replace />} />
 				</Routes>
 			</Router>
+			{/* <SubeMedia /> */}
 		</div>
 	);
 };

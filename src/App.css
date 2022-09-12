@@ -66,6 +66,22 @@ body {
 	flex-direction: column;
 }
 
+/* #foto::-webkit-file-upload-button {
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+} */
+
+input::file-selector-button {
+	border: 1px solid #c1bdbd;
+	width: 260px;
+	height: 40px;
+	font-size: 20px;
+	border-radius: 6px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
 .inputs #submit {
 	cursor: pointer;
 }

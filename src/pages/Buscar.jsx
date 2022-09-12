@@ -11,11 +11,14 @@ const Buscar = () => {
 	useEffect(() => {
 		const recupera = async () => {
 			if (query.length === 0) {
-				const res = await axios.get(`http://localhost:5000/api/cursos`);
+				const res = await axios.get(
+					`${process.env.REACT_APP_BACKEND_URL}/cursos`
+				); //)
+				// || axios.get(`${process.env.REACT_APP_BACKEND_URL}/docentes`);
 				setDatos(res.data.cursos);
 			} else {
 				const res = await axios.get(
-					`http://localhost:5000/api/cursos/buscar/${query}`
+					`${process.env.REACT_APP_BACKEND_URL}'/cursos/buscar/${query}`
 				);
 				setDatos(res.data.cursos);
 			}
@@ -41,6 +44,7 @@ const Buscar = () => {
 					onChange={gestorBusca}
 					onKeyDown={gestorTecla}
 				/>
+				{/* Representa los datos en una tabla. Podemos usar cualquier componente. Por ej. un Card */}
 				<Tabla datos={datos} />
 			</div>
 		</div>
