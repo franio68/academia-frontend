@@ -18,7 +18,7 @@ const Buscar = () => {
 				setDatos(res.data.cursos);
 			} else {
 				const res = await axios.get(
-					`${process.env.REACT_APP_BACKEND_URL}'/cursos/buscar/${query}`
+					`${process.env.REACT_APP_BACKEND_URL}/cursos/buscar/${query}`
 				);
 				setDatos(res.data.cursos);
 			}
